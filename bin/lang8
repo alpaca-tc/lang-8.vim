@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+root_dir = File.expand_path(File.dirname(__FILE__) + '/..')
+$:.push("#{root_dir}/lib")
+require 'lang8'
+
+Lang8.configure do |c|
+  # c.default_driver = :selenium
+end
+
+Lang8::Cook::PostJournal.cook(email: 'email', password: 'password', journal_title: 'title', journal_body: 'body').bake
