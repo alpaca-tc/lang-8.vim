@@ -1,7 +1,7 @@
 
 require 'active_support/all'
-require 'capybara'
-require 'capybara-webkit'
+require 'mechanize'
+require 'core_ext/hash'
 
 module Lang8
   AUTHOR = 'alpaca-tc'
@@ -17,7 +17,5 @@ module Lang8
 
   def self.configure
     yield configuration
-    ::Capybara.app_host = configuration.app_host
-    ::Capybara.default_driver = configuration.default_driver
   end
 end

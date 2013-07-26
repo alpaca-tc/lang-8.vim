@@ -8,7 +8,7 @@ function! lang8#post_journal#post(count, line1, line2, ...)
   let title = join(getline(a:line1, a:line1))
   let title = input('Title: ', title)
   let password = inputsecret('Input password : ')
-  silent!
+
   ruby << EOF
   Lang8.configure do |c|
     # c.default_driver = :selenium
@@ -31,5 +31,5 @@ function! lang8#post_journal#post(count, line1, line2, ...)
   VIM.let('url', url)
 EOF
 
-  call lang8#set_clipboard(url)
+  " call lang8#util#set_clipboard(url)
 endfunction"}}}

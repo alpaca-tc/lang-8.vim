@@ -33,7 +33,7 @@ let s:save_cpo = &cpo
 set cpo&vim
 
 let g:lang8_root_dir = expand("<sfile>:p:h:h")
-command! -nargs=? -range=% PostJournal :call lang8#post_journal#post(<count>, <line1>, <line2>, <f-args>)
+command! -nargs=? -range=% Lang8Post :call lang8#post_journal#post(<count>, <line1>, <line2>, <f-args>)
 
 let &cpo = s:save_cpo
 unlet s:save_cpo

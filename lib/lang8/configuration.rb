@@ -1,8 +1,7 @@
 module Lang8
   class Configuration
     def initialize
-      add_setting :default_driver, default: :webkit
-      add_setting :app_host, default: 'http://lang-8.com'
+      add_setting :lang8_host, default: 'http://lang-8.com'
     end
 
     def self.add_setting(name, opts={})

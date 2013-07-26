@@ -1,11 +1,12 @@
 module Lang8::Ingredient
   module Login
-    extend Capybara::DSL
-    def self.do(email: pc_address, password: password)
-      visit '/login'
-      fill_in('username', with: email)
-      fill_in('password', with: password)
-      click_on('Log In')
+    def self.do(username: username, password: password)
+      agent = Lang8::Ingredient.agent
+      path = "#{Lang8::Ingredient.root_path}/sessions/new"
+      agent.post(path, {
+        username: username,
+        password: password
+      })
     end
   end
 end
