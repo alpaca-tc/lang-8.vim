@@ -1,9 +1,9 @@
-module Lang8::Cook
+module Lang8::Chef
   class Base
     attr_accessor :recipe
 
     def self.cook(*args)
-      self.new(*args)
+      self.new(*args).cook
     end
 
     def initialize(*args)
@@ -12,27 +12,13 @@ module Lang8::Cook
       @is_dressed = true
     end
 
-    def bake
+    def cook
       @recipe_instance.bake
     end
 
     private
     def set_recipe 
       @recipe = ::Lang8::Recipe
-    end
-  end
-
-  class Login < Base
-    private
-    def set_recipe 
-      @recipe = ::Lang8::Recipe::LoginRecipe
-    end
-  end
-
-  class PostJournal < Base
-    private
-    def set_recipe 
-      @recipe = ::Lang8::Recipe::PostJournalRecipe
     end
   end
 end

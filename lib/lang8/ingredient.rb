@@ -1,4 +1,5 @@
 module Lang8::Ingredient
+  autoloading __FILE__, :ingredient
   mattr_accessor :agent
 
   def self.agent
@@ -10,7 +11,4 @@ module Lang8::Ingredient
   def self.root_path
     Lang8.configuration.lang8_host
   end
-
-  autoload :Login, 'lang8/ingredient/login'
-  autoload :PostJournal, 'lang8/ingredient/post_journal'
 end
